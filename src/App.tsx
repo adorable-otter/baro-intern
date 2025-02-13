@@ -1,9 +1,7 @@
+import Router from './routers/Router';
+
 function App() {
-  return (
-    <>
-      <div className="w-screen h-screen bg-amber-200">app</div>
-    </>
-  );
+  return <Router />;
 }
 
 export default App;
