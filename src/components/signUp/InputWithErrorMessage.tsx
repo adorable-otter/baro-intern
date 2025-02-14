@@ -12,7 +12,7 @@ const InputWithErrorMessage = ({ inputData, register, error }: InputWithErrorMes
 
   return (
     <div className="flex flex-col">
-      <input className="border border-solid rounded-md mt-2 p-2 text-xl" type={type} placeholder={placeholder} {...register} />
+      <input className="auth-input" type={type} placeholder={placeholder} {...register} />
       <p className="text-xs text-[tomato] mt-1 pl-1 h-2.5">{error?.message}</p>
     </div>
   );

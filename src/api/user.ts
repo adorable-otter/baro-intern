@@ -45,3 +45,15 @@ export const fetchUserInfoByUsername = async (username: string): Promise<Profile
   if (error) throw error;
   return data;
 };
+
+export const requestLogin = async (credential: UserCredential): Promise<User> => {
+  const { data, error } = await supabase.auth.signInWithPassword(credential);
+  if (error || !data.user) throw error;
+  return data.user;
+};
+
+export const fetchUserProfileById = async (id: string): Promise<ProfileRow> => {
+  const { data, error } = await supabase.from('user_profiles').select().eq('id', id).maybeSingle();
+  if (error) throw error;
+  return data;
+};

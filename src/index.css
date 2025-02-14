@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+
+@layer base {
+  .auth-input {
+    @apply border border-solid rounded-md mt-2 p-2 text-xl;
+  }
+}

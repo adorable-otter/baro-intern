@@ -3,8 +3,6 @@ import { useState } from 'react';
 type useFormParam = {
   email: string;
   password: string;
-  passwordCheck: string;
-  userName: string;
 };
 
 const useForm = (initialValues: useFormParam) => {
