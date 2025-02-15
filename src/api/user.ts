@@ -1,6 +1,6 @@
 import { UseFormSetError } from 'react-hook-form';
 import { supabase } from '../supabase';
-import { ProfileInsert, ProfileRow, UserCredential } from '../types/user';
+import { ProfileInsert, ProfileRow, ProfileUpdate, UserCredential } from '../types/user';
 import defaultProfileImagePath from '/defaultProfile.png?url';
 import { SignUpFormData } from '../pages/SignUp';
 import { User } from '@supabase/supabase-js';
@@ -56,4 +56,9 @@ export const fetchUserProfileById = async (id: string): Promise<ProfileRow> => {
   const { data, error } = await supabase.from('user_profiles').select().eq('id', id).maybeSingle();
   if (error) throw error;
   return data;
+};
+
+export const updateUserProfile = async (toUpdate: ProfileUpdate): Promise<void> => {
+  const { error } = await supabase.from('user_profiles').update(toUpdate).eq('id', toUpdate.id);
+  if (error) throw error;
 };
