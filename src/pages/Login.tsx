@@ -29,7 +29,7 @@ const Login = () => {
 
   return (
     <div>
-      <p className="text-[#282828] p-2 pb-6 text-center text-3xl font-bold">로그인</p>
+      <p className="form-title">로그인</p>
       <form className="flex flex-col gap-4 mb-2" onSubmit={handleSubmit}>
         <input
           className="auth-input"

@@ -32,7 +32,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <p className="text-[#282828] p-2 pb-6 text-center text-3xl font-bold">회원가입</p>
+      <p className="form-title">회원가입</p>
       <form
         className="flex flex-col gap-4"
         onSubmit={(e) => {
